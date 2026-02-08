@@ -11,7 +11,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data:/app/data
       - /opt/stacks:/opt/stacks
-      - /usr/bin/docker:/usr/bin/docker:ro
+      - /usr/bin/docker:/usr/local/bin/docker:ro
       - /usr/libexec/docker/cli-plugins:/usr/libexec/docker/cli-plugins:ro
     environment:
       - DOCKGE_STACKS_DIR=/opt/stacks
+      - PATH=/usr/local/bin:/usr/bin:/bin
