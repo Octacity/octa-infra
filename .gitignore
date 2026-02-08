@@ -1,0 +1,17 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Service data directories
+services/*/data/
+services/*/evolution_instances/
+services/*/evolution_store/
+
+# Environment files
+.env
+*.env.local
+
+# Logs
+*.log
