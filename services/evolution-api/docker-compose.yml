@@ -1,10 +1,23 @@
 version: "3.8"
 
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: evolution-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=evolution
+      - POSTGRES_USER=evolution
+      - POSTGRES_PASSWORD=evolution_pass_change_me
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
   evolution-api:
     image: atendai/evolution-api:latest
     container_name: evolution-api
     restart: unless-stopped
+    depends_on:
+      - postgres
     ports:
       - "8080:8080"
     volumes:
@@ -25,8 +38,10 @@ services:
       - LOG_LEVEL=ERROR
       - LOG_COLOR=true
 
-      # Database (optional - uses local storage by default)
-      - DATABASE_ENABLED=false
+      # Database
+      - DATABASE_ENABLED=true
+      - DATABASE_PROVIDER=postgresql
+      - DATABASE_CONNECTION_URI=postgresql://evolution:evolution_pass_change_me@postgres:5432/evolution
 
       # Authentication
       - AUTHENTICATION_TYPE=apikey
