@@ -58,9 +58,9 @@ services:
       - DATABASE_CONNECTION_URI=postgresql://evolution:evolution_pass_change_me@postgres:5432/evolution
 
       # Redis
-      - REDIS_ENABLED=true
-      - REDIS_URI=redis://redis:6379
       - CACHE_REDIS_ENABLED=true
+      - CACHE_REDIS_URI=redis://redis:6379
+      - CACHE_REDIS_PREFIX_KEY=evolution
 
       # Authentication
       - AUTHENTICATION_TYPE=apikey
