@@ -16,9 +16,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        VITE_API_URL: http://18.207.71.231:8080
-        VITE_API_KEY: ${EVOLUTION_API_KEY:-CHANGE_THIS_API_KEY}
     container_name: evolution-manager
     restart: unless-stopped
     ports:
