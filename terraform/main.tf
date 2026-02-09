@@ -88,6 +88,14 @@ resource "aws_security_group" "octa_services" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # WA-Automate (8082)
+  ingress {
+    from_port   = 8082
+    to_port     = 8082
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # Outbound traffic
   egress {
     from_port   = 0

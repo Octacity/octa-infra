@@ -6,8 +6,20 @@ services:
     container_name: wa-automate
     restart: unless-stopped
     ports:
-      - "8081:8002"
+      - "8082:8002"
     volumes:
       - ./wa-data:/usr/src/app/data
     environment:
       - PORT=8002
+
+  evolution-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: evolution-manager
+    restart: unless-stopped
+    ports:
+      - "8081:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://18.207.71.231:8080
+      - NEXT_PUBLIC_API_KEY=${EVOLUTION_API_KEY:-CHANGE_THIS_API_KEY}
