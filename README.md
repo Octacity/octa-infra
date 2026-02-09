@@ -29,8 +29,7 @@ octa-infra/
 | **Portainer** | 9000 | Docker management UI |
 | **Beszel** | 45876 | System monitoring dashboard |
 | **Dozzle** | 8888 | Real-time container logs |
-| **Evolution API** | 8080 | WhatsApp API service |
-| **Evolution Manager** | 8081 | Evolution API Web UI (custom built) |
+| **Evolution API** | 8080 | WhatsApp API service (use Swagger UI at /manager) |
 | **WA-Automate** | 8082 | Alternative WhatsApp automation platform |
 
 ## 🚀 Deployment
