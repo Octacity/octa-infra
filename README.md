@@ -30,6 +30,7 @@ octa-infra/
 | **Beszel** | 45876 | System monitoring dashboard |
 | **Dozzle** | 8888 | Real-time container logs |
 | **Evolution API** | 8080 | WhatsApp API service |
+| **Evolution Manager** | 8081 | WhatsApp UI (manage instances & QR codes) |
 
 ## 🚀 Deployment
 

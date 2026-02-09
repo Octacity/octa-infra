@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  evolution-manager:
+    image: atendai/evolution-manager:latest
+    container_name: evolution-manager
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      # Evolution API connection
+      - EVOLUTION_API_URL=http://evolution-api:8080
+      - EVOLUTION_API_KEY=${EVOLUTION_API_KEY:-CHANGE_THIS_API_KEY}
+    networks:
+      - evolution-api_default
+
+networks:
+  evolution-api_default:
+    external: true

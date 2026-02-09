@@ -6,3 +6,4 @@ include:
   - services/beszel/docker-compose.yml
   - services/dozzle/docker-compose.yml
   - services/evolution-api/docker-compose.yml
+  - services/evolution-manager/docker-compose.yml
