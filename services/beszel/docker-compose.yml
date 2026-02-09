@@ -22,4 +22,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - PORT=45877
-      - KEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIERWVMbl8mFi6MfLINcIfnlzJYhLIjx6VK++Q8XHG2KG ubuntu@ip-172-31-30-27
+      - KEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHDkncARH4uLS7FLdurFPIQ17tBfWoDs+5s0EwJ8cwdx
