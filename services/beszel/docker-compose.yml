@@ -7,7 +7,6 @@ services:
     restart: unless-stopped
     ports:
       - "45876:8090"
-      - "45877:45876"
     volumes:
       - ./data:/beszel_data
     environment:
