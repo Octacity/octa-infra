@@ -1,11 +1,13 @@
 version: "3.8"
 
 services:
-  evolution-manager:
-    image: gabrielpastori1/evolution-manager:latest
-    container_name: evolution-manager
+  wa-automate:
+    image: openwa/wa-automate:latest
+    container_name: wa-automate
     restart: unless-stopped
     ports:
-      - "8081:3000"
+      - "8081:8002"
+    volumes:
+      - ./wa-data:/usr/src/app/data
     environment:
-      - NEXT_PUBLIC_EVOLUTION_API_URL=http://18.207.71.231:8080
+      - PORT=8002
