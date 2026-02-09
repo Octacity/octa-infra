@@ -11,11 +11,11 @@ RUN git clone https://github.com/EvolutionAPI/evolution-manager.git .
 # Install dependencies (this is what's missing in published images)
 RUN npm install
 
-# Build the application
-RUN npm run build
+# Check available scripts
+RUN npm run
 
 # Expose port
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application (try common Next.js patterns)
+CMD ["npm", "run", "dev"]
