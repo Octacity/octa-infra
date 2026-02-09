@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   evolution-manager:
-    image: davidbeksterne/evolution-manager:latest
+    image: evoapicloud/evolution-manager:latest
     container_name: evolution-manager
     restart: unless-stopped
     ports:
