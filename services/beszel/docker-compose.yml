@@ -7,7 +7,19 @@ services:
     restart: unless-stopped
     ports:
       - "45876:8090"
+      - "45877:45876"
     volumes:
       - ./data:/beszel_data
     environment:
       - DISABLE_PASSWORD_AUTH=false
+
+  beszel-agent:
+    image: henrygd/beszel-agent:latest
+    container_name: beszel-agent
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - PORT=45877
+      - KEY=octa_beszel_secret_key_2026
