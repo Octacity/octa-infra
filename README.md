@@ -2,6 +2,8 @@
 
 Central infrastructure repository for Octacity services using GitOps pattern.
 
+🚀 **GitOps Active** - Changes automatically deploy on push to main!
+
 ## 🏗️ Architecture
 
 - **Infrastructure**: AWS EC2 (Terraform)
