@@ -1,48 +1,8 @@
-version: "3.8"
-
 # Root orchestrator for all services
-# This file uses 'include' to compose all service stacks
 # Run: docker compose up -d --remove-orphans
 
-services:
-  # Dockge - Docker stack manager
-  dockge:
-    extends:
-      file: ./services/dockge/docker-compose.yml
-      service: dockge
-
-  # Beszel - System monitoring hub
-  beszel:
-    extends:
-      file: ./services/beszel/docker-compose.yml
-      service: beszel
-
-  # Beszel Agent - Monitoring agent
-  beszel-agent:
-    extends:
-      file: ./services/beszel/docker-compose.yml
-      service: beszel-agent
-
-  # Dozzle - Container logs viewer
-  dozzle:
-    extends:
-      file: ./services/dozzle/docker-compose.yml
-      service: dozzle
-
-  # Evolution API - PostgreSQL database
-  evolution-postgres:
-    extends:
-      file: ./services/evolution-api/docker-compose.yml
-      service: postgres
-
-  # Evolution API - Redis cache
-  evolution-redis:
-    extends:
-      file: ./services/evolution-api/docker-compose.yml
-      service: redis
-
-  # Evolution API - WhatsApp API
-  evolution-api:
-    extends:
-      file: ./services/evolution-api/docker-compose.yml
-      service: evolution-api
+include:
+  - services/dockge/docker-compose.yml
+  - services/beszel/docker-compose.yml
+  - services/dozzle/docker-compose.yml
+  - services/evolution-api/docker-compose.yml
