@@ -72,6 +72,14 @@ resource "aws_security_group" "octa_services" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # Portainer (9000)
+  ingress {
+    from_port   = 9000
+    to_port     = 9000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # Outbound traffic
   egress {
     from_port   = 0

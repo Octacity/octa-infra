@@ -2,7 +2,7 @@
 # Run: docker compose up -d --remove-orphans
 
 include:
-  - services/dockge/docker-compose.yml
+  - services/portainer/docker-compose.yml
   - services/beszel/docker-compose.yml
   - services/dozzle/docker-compose.yml
   - services/evolution-api/docker-compose.yml

@@ -26,7 +26,7 @@ octa-infra/
 
 | Service | Port | Description |
 |---------|------|-------------|
-| **Dockge** | 5001 | Docker stack visual manager |
+| **Portainer** | 9000 | Docker management UI |
 | **Beszel** | 45876 | System monitoring dashboard |
 | **Dozzle** | 8888 | Real-time container logs |
 | **Evolution API** | 8080 | WhatsApp API service |
