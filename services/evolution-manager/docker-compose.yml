@@ -20,6 +20,8 @@ services:
     restart: unless-stopped
     ports:
       - "8081:3000"
+    env_file:
+      - ../evolution-api/.env
     environment:
-      - NEXT_PUBLIC_API_URL=http://18.207.71.231:8080
-      - NEXT_PUBLIC_API_KEY=${EVOLUTION_API_KEY:-CHANGE_THIS_API_KEY}
+      - VITE_API_URL=http://18.207.71.231:8080
+      - VITE_API_KEY=${EVOLUTION_API_KEY}
