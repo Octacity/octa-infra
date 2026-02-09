@@ -17,5 +17,5 @@ RUN npm run
 # Expose port
 EXPOSE 3000
 
-# Start the application (try common Next.js patterns)
-CMD ["npm", "run", "dev"]
+# Start the application with host exposed
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
