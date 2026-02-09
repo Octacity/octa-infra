@@ -11,8 +11,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data:/app/data
       - /home/ubuntu/octa-infra:/opt/stacks
-      - /usr/bin/docker:/usr/local/bin/docker:ro
-      - /usr/libexec/docker/cli-plugins:/usr/libexec/docker/cli-plugins:ro
     environment:
       - DOCKGE_STACKS_DIR=/opt/stacks
-      - PATH=/usr/local/bin:/usr/bin:/bin
+    entrypoint: >
+      sh -c "
+      apk add --no-cache docker-cli docker-cli-compose &&
+      exec /usr/bin/dumb-init -- node server/index.js
+      "
